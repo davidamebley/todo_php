@@ -1,0 +1,2 @@
+In the PROJECT ROOT dir, run 'php -S localhost:8080' in the console to start the DEV SERVER. You may change 8080 to your pref. port number.
+In your browser console, enter your host[localhost]:port, then php_file to run
