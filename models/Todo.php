@@ -18,8 +18,29 @@
         $this->con = $db;
     }
 
-    // Get Users
-    public function read()
+    // Get Todos
+    public function read(){
+        // Query to SELECT all TODOS
+        $query = 'SELECT
+                t.id,
+                t.name,
+                t.description,
+                t.created_at,
+                t.last_updated,
+                t.status
+            FROM
+                '.$this->table.' t
+                ORDER BY
+                t.created_at DESC';
+
+        // Prepare Statement
+        $stmt = $this->con->prepare($query);
+
+        // Execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
  }
 
 ?>
